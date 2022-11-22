@@ -2,7 +2,7 @@
 
 ctr1=$(buildah from quay.io/bclaster/roar-db-test:v4)
 buildah copy $ctr1 docker-entrypoint-initdb.d /docker-entrypoint-initdb.d/
-buildah config --entrypoint '["/entrypoint.sh","mysqld"]' $ctr1
+buildah config --cmd '["/entrypoint.sh","mysqld"]' $ctr1
 buildah commit $ctr1 roar-db:1.0.1
 
 ctr2=$(buildah from docker.io/tomcat:7.0.65-jre7)
