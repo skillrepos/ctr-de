@@ -1,5 +1,5 @@
 # Introduction to Kubernetes - optional labs
-<p style="text-align: center;">
+<div align="center">
 Containers Demystified
 A hands-on approach to understanding container mechanics, standards, and tooling.  Includes Docker, Podman, and Buildah
 
@@ -7,7 +7,7 @@ Class Labs
 Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 
 04/01/2023
-</p>
+</div>
 
 
 **Lab 1 - Creating Images
