@@ -14,6 +14,9 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 
 **Purpose:  In this lab, we’ll see how to do basic operations like build with images.
 
+<details>
+<summary>"Click to expand"</summary>
+
 1. If you haven't already, clone down the ctr-de repository from GitHub.
 
 >
@@ -64,6 +67,8 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 >
 >       $ docker images | grep roar
 >
+	
+</details>	
 <p align="center">	
 **END OF LAB
 </p>
