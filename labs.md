@@ -30,7 +30,7 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 1.	If you haven't already, clone down the ctr-de repository from GitHub.
 
 >
->          **$ git clone https://github.com/skillrepos/ctr-de**
+>      **git clone https://github.com/skillrepos/ctr-de**
 >
 
 2.	Switch into the directory for our docker work.
