@@ -9,15 +9,15 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 04/01/2023
 </p>
 
-**Lab 1- Building Docker Images**
+## Lab 1- Building Docker Images
 
-**Purpose: In this lab, we'll see how to build Docker images from Dockerfiles.**
+## Purpose: In this lab, we'll see how to build Docker images from Dockerfiles.
 
 1. Clear your console and switch into the directory for our docker work.
 >
-> **\$ clear**
+>   $ clear
 >
-> **\$ cd containers**
+>   $ cd containers
 >
 
 2.  Do an **ls** command and take a look at the files that we have in
@@ -30,13 +30,13 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 1.	If you haven't already, clone down the ctr-de repository from GitHub.
 
 >
->          **\$ git clone https://github.com/skillrepos/ctr-de**
+>          **$ git clone https://github.com/skillrepos/ctr-de**
 >
 
 2.	Switch into the directory for our docker work.
 
 >
->          **\$ cd roar-docker**
+>          $ cd roar-docker
 >
 
 3.	Do an ls command and take a look at the files that we have in this directory.
