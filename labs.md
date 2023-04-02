@@ -17,7 +17,7 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 1. If you haven't already, clone down the ctr-de repository from GitHub.
 
 >
->     $ git clone https://github.com/skillrepos/ctr-de
+>       $ git clone https://github.com/skillrepos/ctr-de
 >
 
 2. Switch into the directory for our docker work.
@@ -26,43 +26,43 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 >       $ cd roar-docker
 >
 
-3.	Do an ls command and take a look at the files that we have in this directory.
+3. Do an ls command and take a look at the files that we have in this directory.
 
 >
->          **\$ ls
+>       $ ls
 >
 
-4.	Take a moment and look at each of the files that start with “Dockerfile”.  See if you can understand what’s happening in them.
+4. Take a moment and look at each of the files that start with “Dockerfile”.  See if you can understand what’s happening in them.
 
 >
->.         **\$ cat Dockerfile_roar_db_image
->          **\$ cat Dockerfile_roar_web_image
+        $ cat Dockerfile_roar_db_image
+>       $ cat Dockerfile_roar_web_image
 >          
 
-5.	Now let’s build our docker database image.  Type (or copy/paste) the following command: (Note that there is a space followed by a dot at the end of the command that must be there.)
+5. Now let’s build our docker database image.  Type (or copy/paste) the following command: (Note that there is a space followed by a dot at the end of the command that must be there.)
 
 >
->  **\$ docker build -f Dockerfile_roar_db_image -t roar-db .
+>       $ docker build -f Dockerfile_roar_db_image -t roar-db .
 >
 
-6.	Next build the image for the web piece.   This command is similar except it takes a build argument that is the war file in the directory that contains our previously built webapp.
+6. Next build the image for the web piece.   This command is similar except it takes a build argument that is the war file in the directory that contains our previously built webapp.
 (Note the space and dot at the end again.)
 
 >
-> **\$ docker build -f Dockerfile_roar_web_image --build-arg  warFile=roar.war -t roar-web .
+>       $ docker build -f Dockerfile_roar_web_image --build-arg  warFile=roar.war -t roar-web .
 >
 
-7.	Now, let’s tag our two images with your user name for the docker.io or quay.io repositories. We’ll give them a tag of “v1” as opposed to the default tag that Docker provides of “latest”.
+7. Now, let’s tag our two images with your user name for the docker.io or quay.io repositories. We’ll give them a tag of “v1” as opposed to the default tag that Docker provides of “latest”.
 
 >
-> **\$ docker tag roar-web <your registry username>/roar-web:v1
-> **\$ docker tag roar-db <your registry username>/roar-db:v1
+>       $ docker tag roar-web <your registry username>/roar-web:v1
+>       $ docker tag roar-db <your registry username>/roar-db:v1
 >
        
-8.	Do a docker images command to see the new images you’ve created.
+8. Do a docker images command to see the new images you’ve created.
 
 >
->    **\$ docker images | grep roar
+>       $ docker images | grep roar
 >
 END OF LAB
 
