@@ -10,7 +10,7 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 </p>
 
 
-**Lab 1- Creating Images
+**Lab 1 - Creating Images
 
 **Purpose:  In this lab, we’ll see how to do basic operations like build with images.
 
@@ -35,7 +35,7 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 4. Take a moment and look at each of the files that start with “Dockerfile”.  See if you can understand what’s happening in them.
 
 >
-        $ cat Dockerfile_roar_db_image
+>       $ cat Dockerfile_roar_db_image
 >       $ cat Dockerfile_roar_web_image
 >          
 
@@ -64,13 +64,15 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 >
 >       $ docker images | grep roar
 >
-END OF LAB
+<p align="center">	
+**END OF LAB
+</p>
 
 
 
-Lab 2 – Composing images together
+**Lab 2 – Composing images together
 
-     Purpose: In this lab, we’ll see how to make multiple containers execute together with docker compose and use the docker inspect command to get information to see our running app.
+**Purpose: In this lab, we’ll see how to make multiple containers execute together with docker compose and use the docker inspect command to get information to see our running app.
 
 1.	Take a look at the docker compose file for our application and see if you can understand some of what it is doing.
 $ cat docker-compose.yml
