@@ -30,13 +30,13 @@ Version 2.0 by Brent Laster for Tech Skills Transformations LLC
 1.	If you haven't already, clone down the ctr-de repository from GitHub.
 
 >
->          **\$ git clone https://github.com/skillrepos/ctr-de
+>          **\$ git clone https://github.com/skillrepos/ctr-de**
 >
 
 2.	Switch into the directory for our docker work.
 
 >
->          **\$ cd roar-docker
+>          **\$ cd roar-docker**
 >
 
 3.	Do an ls command and take a look at the files that we have in this directory.
