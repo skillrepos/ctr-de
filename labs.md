@@ -137,11 +137,11 @@ Make a note of the url that is returned.
 </p>
 </details>
 
-&nbsp;<br>
 	
 ---
 #  
 &nbsp;<br>	
+		
 	
 **Lab 3 – Debugging Docker Containers**
 
@@ -246,10 +246,13 @@ Remove the images
 <b>END OF LAB</b>
 </p>
 </details>
-&nbsp;<br>
+
+	
 ---
 #  
 &nbsp;<br>	
+		
+	
 **Lab 4:  Mapping Docker images and containers with the filesystem**
 
 *Purpose: In this lab, we'll explore how layers, images and containers are actually mapped and stored in the filesystem.*
@@ -363,10 +366,12 @@ newfile.txt
 <b>END OF LAB</b>
 </p>
 </details>
-&nbsp;<br>
+
+	
 ---
 #  
 &nbsp;<br>	
+	
 **Lab 5 - Working with Podman**
 
 *Purpose: In this lab, we'll get a chance to work with Podman, an alternative to Docker that also includes the abilities to group and work with containers in "pods".*
@@ -460,10 +465,11 @@ http://localhost:8087/roar
 <b>END OF LAB</b>
 </p>
 </details>	
-&nbsp;<br>
+	
 ---
 #  
 &nbsp;<br>	
+		
 **Lab 6: Working with Buildah**
 
 *Purpose: In this lab, we'll work with the container build and management tool Buildah.*
@@ -546,6 +552,9 @@ http://localhost:8087/roar
 <b>END OF LAB</b>
 </p>
 </details>
-&nbsp;<br>
+
+	
 ---
+#  
+&nbsp;<br>	
 	
