@@ -11,8 +11,7 @@ _04/01/2023_
 
 ---
 #  
-
-
+&nbsp;<br>
 **Lab 1 - Creating Images**
 
 *Purpose:  In this lab, we’ll see how to do basic operations like build with images.*
@@ -78,7 +77,7 @@ _04/01/2023_
 	
 ---
 #  
-	
+&nbsp;<br>	
 	
 **Lab 2 – Composing images together**
 
@@ -137,11 +136,13 @@ Make a note of the url that is returned.
 <b>END OF LAB</b>
 </p>
 </details>
-
+&nbsp;<br>
 ---
-## Lab 3 – Debugging Docker Containers**
+#  
+&nbsp;<br>	
+**Lab 3 – Debugging Docker Containers**
 
-### Purpose: While our app runs fine here, it’s helpful to know about a few commands that we can use to learn more about our containers if there are problems.**  
+*Purpose: While our app runs fine here, it’s helpful to know about a few commands that we can use to learn more about our containers if there are problems.*  
 ⬇️	
 <details>
 <summary>Click to expand steps for Lab 3</summary>
@@ -242,11 +243,13 @@ Remove the images
 <b>END OF LAB</b>
 </p>
 </details>
+&nbsp;<br>
+---
+#  
+&nbsp;<br>	
+**Lab 4:  Mapping Docker images and containers with the filesystem**
 
----	
-## Lab 4:  Mapping Docker images and containers with the filesystem**
-
-### Purpose: In this lab, we'll explore how layers, images and containers are actually mapped and stored in the filesystem.**
+*Purpose: In this lab, we'll explore how layers, images and containers are actually mapped and stored in the filesystem.*
 ⬇️	
 <details>
 <summary>Click to expand steps for Lab 4</summary>
@@ -357,11 +360,13 @@ newfile.txt
 <b>END OF LAB</b>
 </p>
 </details>
-
+&nbsp;<br>
 ---
-## Lab 5 - Working with Podman**
+#  
+&nbsp;<br>	
+**Lab 5 - Working with Podman**
 
-### Purpose: In this lab, we'll get a chance to work with Podman, an alternative to Docker that also includes the abilities to group and work with containers in "pods".**
+*Purpose: In this lab, we'll get a chance to work with Podman, an alternative to Docker that also includes the abilities to group and work with containers in "pods".*
 ⬇️	
 <details>
 <summary>Click to expand steps for Lab 5</summary>
@@ -452,11 +457,13 @@ http://localhost:8087/roar
 <b>END OF LAB</b>
 </p>
 </details>	
- 
+&nbsp;<br>
 ---
-## Lab 6: Working with Buildah**
+#  
+&nbsp;<br>	
+**Lab 6: Working with Buildah**
 
-### Purpose: In this lab, we'll work with the container build and management tool Buildah.**
+*Purpose: In this lab, we'll work with the container build and management tool Buildah.*
 ⬇️	
 <details>
 <summary>Click to expand steps for Lab 6</summary>
@@ -536,3 +543,5 @@ http://localhost:8087/roar
 <b>END OF LAB</b>
 </p>
 </details>
+&nbsp;<br>
+---	
