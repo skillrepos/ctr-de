@@ -85,7 +85,7 @@ _04/01/2023_
 	
 ⬇️	
 <details>
-<summary>Click to expand steps for Lab 2</summary>	
+	<summary><b>Click to expand steps for Lab 2</b></summary>	
 
 1. Take a look at the docker compose file for our application and see if you can understand some of what it is doing.
 	
@@ -145,7 +145,7 @@ Make a note of the url that is returned.
 *Purpose: While our app runs fine here, it’s helpful to know about a few commands that we can use to learn more about our containers if there are problems.*  
 ⬇️	
 <details>
-<summary>Click to expand steps for Lab 3</summary>
+	<summary><b>Click to expand steps for Lab 3</b></summary>
 	
 1.Let’s get a description of all of the attributes of our containers.  For these commands, use the same 3 character container id you used in step 2.  
 Run the inspect command.   Take a moment to scroll around the output.
