@@ -1,5 +1,5 @@
 <div align="center">
-# Introduction to Kubernetes - optional labs
+
 **Containers Demystified**
 A hands-on approach to understanding container mechanics, standards, and tooling.  Includes Docker, Podman, and Buildah
 
