@@ -18,7 +18,7 @@ _04/01/2023_
 
 ⬇️ <details><summary><b>Click to expand steps for Lab 1</b></summary> 
 
--[] 1. If you haven't already, clone down the ctr-de repository from GitHub.
+- [ ] 1. If you haven't already, clone down the ctr-de repository from GitHub.
 
 >
 >       git clone https://github.com/skillrepos/ctr-de
