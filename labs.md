@@ -10,7 +10,7 @@ _04/01/2023_
 </div>
 
 ---
-#### Lab 1 - Creating Images
+### Lab 1 - Creating Images
 
 ##### Purpose:  In this lab, we’ll see how to do basic operations like build with images.
 
