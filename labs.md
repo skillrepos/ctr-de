@@ -11,6 +11,7 @@ _04/01/2023_
 
 ---
 \ 
+
 **Lab 1 - Creating Images**
 
 *Purpose:  In this lab, we’ll see how to do basic operations like build with images.*
@@ -73,8 +74,10 @@ _04/01/2023_
 </p>
 </details>
 \ 
+	
 ---
-\ 	
+\ 
+	
 **Lab 2 – Composing images together**
 
 *Purpose: In this lab, we’ll see how to make multiple containers execute together with docker compose and use the docker inspect command to get information to see our running app.*
