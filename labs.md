@@ -74,10 +74,11 @@ _04/01/2023_
 <b>END OF LAB</b>
 </p>
 </details>
-\ 
+&nbsp;<br>
 	
 ---
-\ 
+#  
+	
 	
 **Lab 2 – Composing images together**
 
