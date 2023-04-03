@@ -12,10 +12,10 @@ _04/01/2023_
 
 **Lab 1 - Creating Images**
 
-**Purpose:  In this lab, we’ll see how to do basic operations like build with images.**
+*Purpose:  In this lab, we’ll see how to do basic operations like build with images.*
 
 <details>
-<summary>"Click to expand steps for Lab 1"</summary>
+<summary>Click to expand steps for Lab 1</summary>
 
 1. If you haven't already, clone down the ctr-de repository from GitHub.
 
@@ -32,69 +32,78 @@ _04/01/2023_
 3. Do an ls command and take a look at the files that we have in this directory.
 
 >
->       $ ls
+>       ls
 >
 
 4. Take a moment and look at each of the files that start with “Dockerfile”.  See if you can understand what’s happening in them.
 
 >
->       $ cat Dockerfile_roar_db_image
->       $ cat Dockerfile_roar_web_image
+>       cat Dockerfile_roar_db_image
+>       cat Dockerfile_roar_web_image
 >          
 
 5. Now let’s build our docker database image.  Type (or copy/paste) the following command: (Note that there is a space followed by a dot at the end of the command that must be there.)
 
 >
->       $ docker build -f Dockerfile_roar_db_image -t roar-db .
+>       docker build -f Dockerfile_roar_db_image -t roar-db .
 >
 
 6. Next build the image for the web piece.   This command is similar except it takes a build argument that is the war file in the directory that contains our previously built webapp.
 (Note the space and dot at the end again.)
 
 >
->       $ docker build -f Dockerfile_roar_web_image --build-arg  warFile=roar.war -t roar-web .
+>       docker build -f Dockerfile_roar_web_image --build-arg  warFile=roar.war -t roar-web .
 >
 
 7. Now, let’s tag our two images with your user name for the docker.io or quay.io repositories. We’ll give them a tag of “v1” as opposed to the default tag that Docker provides of “latest”.
 
 >
->       $ docker tag roar-web <your registry username>/roar-web:v1
->       $ docker tag roar-db <your registry username>/roar-db:v1
+>       docker tag roar-web <your registry username>/roar-web:v1
+>       docker tag roar-db <your registry username>/roar-db:v1
 >
        
 8. Do a docker images command to see the new images you’ve created.
 
 >
->       $ docker images | grep roar
+>       docker images | grep roar
 >
 	
-</details>	
 <p align="center">	
-**END OF LAB
+<b>END OF LAB</b>
 </p>
+</details>
 
 
+**Lab 2 – Composing images together**
 
-**Lab 2 – Composing images together
+*Purpose: In this lab, we’ll see how to make multiple containers execute together with docker compose and use the docker inspect command to get information to see our running app.*
+	
+<details>
+<summary>Click to expand steps for Lab 2</summary>	
 
-**Purpose: In this lab, we’ll see how to make multiple containers execute together with docker compose and use the docker inspect command to get information to see our running app.
+1. Take a look at the docker compose file for our application and see if you can understand some of what it is doing.
+	
+>
+>       cat docker-compose.yml
+>
+	
+2. Run the following command to compose the two images together that we built in lab 1.
 
-1.	Take a look at the docker compose file for our application and see if you can understand some of what it is doing.
-$ cat docker-compose.yml
-
-2.	Run the following command to compose the two images together that we built in lab 1.
-$ docker-compose up
-
-3.	You should see the different processes running to create the containers and start the application running.  Take a look at the running containers that resulted from this command.
+>	
+>       docker-compose up
+>
+	
+3. You should see the different processes running to create the containers and start the application running.  Take a look at the running containers that resulted from this command.
 
 Note: We’ll leave the processes running in the first session, so open a second command prompt/terminal emulator and enter the command below.
 
-$ docker ps | grep roar
+>	
+>       docker ps | grep roar
+>
 
+4. Make a note of the first 3 characters of the container id (first column) for the web container (row with roar-web in it).  You’ll need those for the next step.
 
-4.	Make a note of the first 3 characters of the container id (first column) for the web container (row with roar-web in it).  You’ll need those for the next step.
-
-5.	Let’s find the web address so we can look at the running application.  To do this, we will search for the information via a docker inspect command.  Enter this command in the second terminal session, substituting in the characters from the container id from the step above for “<container id>” - the one for roar-web.   
+5. Let’s find the web address so we can look at the running application.  To do this, we will search for the information via a docker inspect command.  Enter this command in the second terminal session, substituting in the characters from the container id from the step above for “<container id>” - the one for roar-web.   
 
 (For example, if the line from docker ps showed this:
 
@@ -104,107 +113,135 @@ then <container id> could be “237”. Also note that “IPAddress” is case-s
 
 Make a note of the url that is returned.
 
-$ docker inspect <container id> | grep IPAddress
+>
+>       docker inspect <container id> | grep IPAddress
+>
 
+6. Open a web browser and go to the url below, substituting  in the ip address from the step above for “<ip address>”. (Note the :8080 part added to the ip address)
 
-
-6.	Open a web browser and go to the url below, substituting  in the ip address from the step above for “<ip address>”. (Note the :8080 part added to the ip address)
-
-           http://<ip address>:8080/roar/
-
+>
+>       http://<ip address>:8080/roar/
+>
 
 7.	You should see the running app on a screen like the following:
 
  
+<p align="center">	
+<b>END OF LAB</b>
+</p>
+</details>
 
-END OF LAB
 
+**Lab 3 – Debugging Docker Containers**
 
-Lab 3 – Debugging Docker Containers
+**Purpose: While our app runs fine here, it’s helpful to know about a few commands that we can use to learn more about our containers if there are problems.**  
 
-Purpose: While our app runs fine here, it’s helpful to know about a few commands that we can use to learn more about our containers if there are problems.  
-
-1.	Let’s get a description of all of the attributes of our containers.  For these commands, use the same 3 character container id you used in step 2.  
-
+<details>
+<summary>Click to expand steps for Lab 3</summary>
+	
+1.Let’s get a description of all of the attributes of our containers.  For these commands, use the same 3 character container id you used in step 2.  
 Run the inspect command.   Take a moment to scroll around the output.
 
-$ docker inspect <container id> 
-
+> 
+>       docker inspect <container id> 
+>
+	
 2. Now, let’s look at the logs from the running container.  Scroll around again and look at the output.  
 
-$ docker logs <container id> 
-
-
+>	
+>       docker logs *<container id>* 
+>
 
 3. While we’re at it, let’s look at the history of the image (not the container).
 
-	$ docker history roar-web
-
+>
+>	docker history roar-web
+>
 
 4. Now, let’s suppose we wanted to take a look at the actual database that is being used for the app. This is a mysql database but we don’t have mysql installed on the VM.  So how can we do that?  Let’s connect into the container and use the mysql version within the container.  To do this we’ll use the “docker exec” command.  First find the container id of the db container.
 
-$ docker ps | grep roar-db
-
+>	
+>       docker ps | grep roar-db
+>
 
 5. Make a note of the first 3 characters of the container id (first column) for the db container (row with roar-db in it).  You’ll need those for the next step.
 
 6.  Now, let’s exec inside the container so we can look at the actual database.
 
-	$ docker exec -it <container id> bash
-
+>	
+>	docker exec -it <container id> bash
+>
+	
 Note that the last item on the command is the command we want to have running when we get inside the container – in this case the bash shell.
 
 	
 7.  Now, you’ll be inside the db container.   Check where you are with the pwd command and then let’s run the mysql command to connect to the database.  (Type these at the /# prompt.  Note no spaces between the options -u and -p and their arguments. You need only type the part in bold.)
 
-	root@container-id:/# pwd
-	root@container-id:/# mysql -uadmin -padmin registry
-
+>	
+>	_root@container-id:/# pwd_
+>	_root@container-id:/# mysql -uadmin -padmin registry_
+>
 
 (Here -u and -p are the userid and password respectively and registry is the database name.)
 
 
 8.  You should now be at the “mysql>” prompt.   Run a couple of commands to see what tables we have and what is in the database. (Just type the parts in bold.)
 
-		mysql> show tables;
-		mysql> select * from agents;
-
+>	
+>	_mysql> show tables;_
+>	_mysql> select * from agents;_
+>
 
 9. Exit out of mysql and then out of the container.
 
-mysql> exit
-root@container-id:/# exit
-
+>	
+>       _mysql> exit_
+>       _root@container-id:/# exit_
+>
 
 10. Let’s go ahead and push our images over to our local registry so they’ll be ready for Kubernetes to use.
-$ docker push localhost:5000/roar-web:v1
-$ docker push localhost:5000/roar-db:v1
-
+	
+>	
+>       docker push localhost:5000/roar-web:v1
+>       docker push localhost:5000/roar-db:v1
+>
+	
 11. Since we no longer need our docker containers running or the original images around, let’s go ahead and get rid of them with the commands below.
 
 (Hint:  docker ps | grep roar  will let you find the ids more easily)
 
 		Stop the containers
 
-		$ docker stop <container id for roar-web>
-		$ docker stop <container id for roar-db>
-
+>	
+>	docker stop _<container id for roar-web>_
+>	docker stop _<container id for roar-db>_
+>
+	
 	Remove the containers
 
-		$ docker rm <container id for roar-web>
-		$ docker rm <container id for roar-db>
-
+>	
+>	docker rm <container id for roar-web>
+>	docker rm <container id for roar-db>
+>
+	
 	Remove the images
 
-		$ docker rmi -f roar-web
-		$ docker rmi -f roar-db
-
+>	
+>       docker rmi -f roar-web
+>       docker rmi -f roar-db
+>
 	
-END OF LAB
+<p align="center">	
+<b>END OF LAB</b>
+</p>
+</details>
 
-Lab 4:  Mapping Docker images and containers with the filesystem
+**Lab 4:  Mapping Docker images and containers with the filesystem**
 
-Purpose: In this lab, we'll explore how layers, images and containers are actually mapped and stored in the filesystem.
+**Purpose: In this lab, we'll explore how layers, images and containers are actually mapped and stored in the filesystem.**
+	
+<details>
+<summary>Click to expand steps for Lab 4</summary>
 
 1.  First, we need to access the underlying storage area for Docker.  If you are running Docker on a Linux machine, you can open a terminal session to "/var/lib/docker".
 
@@ -293,12 +330,12 @@ $ ls <path value from 2nd part of LowerDir copied from previous step>/etc
 
 
 
+**Lab 5 - Working with Podman**
 
-
-
-Lab 5 - Working with Podman
-
-Purpose: In this lab, we'll get a chance to work with Podman, an alternative to Docker that also includes the abilities to group and work with containers in "pods".
+**Purpose: In this lab, we'll get a chance to work with Podman, an alternative to Docker that also includes the abilities to group and work with containers in "pods".**
+	
+<details>
+<summary>Click to expand steps for Lab 5</summary>
 
 1. If you haven't already, go ahead and install podman according to the instructions for your platform. See instructions at https://podman.io/getting-started/installation
 
@@ -362,11 +399,12 @@ $ podman inspect roar-pod
 http://localhost:8087/roar
 
  
+**Lab 6: Working with Buildah**
 
-
-Lab 6: Working with Buildah
-
-In this lab, we'll work with the container build and management tool Buildah.
+**Purpose: In this lab, we'll work with the container build and management tool Buildah.**
+	
+<details>
+<summary>Click to expand steps for Lab 6</summary>
 
 1. If you are running on a Linux system or VM, you can follow instructions at https://github.com/containers/buildah/blob/main/install.md  to install Buildah.  If you are running with Docker Desktop on a Mac or Windows system, you can run it via a Docker container.
 
