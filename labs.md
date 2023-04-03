@@ -14,7 +14,7 @@ _04/01/2023_
 
 ### Purpose:  In this lab, we’ll see how to do basic operations like build with images.
 
-<details><summary><b>Click to expand steps for Lab 1</b></summary> 📗
+📗 <details><summary><b>Click to expand steps for Lab 1</b></summary> 
 
 1. If you haven't already, clone down the ctr-de repository from GitHub.
 
