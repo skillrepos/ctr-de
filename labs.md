@@ -10,12 +10,12 @@ _04/01/2023_
 </div>
 
 
-**Lab 1 - Creating Images**
+##Lab 1 - Creating Images
 
-*Purpose:  In this lab, we’ll see how to do basic operations like build with images.*
+###Purpose:  In this lab, we’ll see how to do basic operations like build with images.*
 
 <details>
-<summary>Click to expand steps for Lab 1</summary>
+<summary><b>Click to expand steps for Lab 1</b></summary>
 
 1. If you haven't already, clone down the ctr-de repository from GitHub.
 
@@ -178,8 +178,8 @@ Note that the last item on the command is the command we want to have running wh
 7.  Now, you’ll be inside the db container.   Check where you are with the pwd command and then let’s run the mysql command to connect to the database.  (Type these at the /# prompt.  Note no spaces between the options -u and -p and their arguments. You need only type the part in bold.)
 
 >	
->	_root@container-id:/# pwd_
->	_root@container-id:/# mysql -uadmin -padmin registry_
+>	root@container-id:/# pwd
+>	root@container-id:/# mysql -uadmin -padmin registry
 >
 
 (Here -u and -p are the userid and password respectively and registry is the database name.)
@@ -188,15 +188,15 @@ Note that the last item on the command is the command we want to have running wh
 8.  You should now be at the “mysql>” prompt.   Run a couple of commands to see what tables we have and what is in the database. (Just type the parts in bold.)
 
 >	
->	_mysql> show tables;_
->	_mysql> select * from agents;_
+>	mysql> show tables;
+>	mysql> select * from agents;
 >
 
 9. Exit out of mysql and then out of the container.
 
 >	
->       _mysql> exit_
->       _root@container-id:/# exit_
+>       mysql> exit
+>       root@container-id:/# exit
 >
 
 10. Let’s go ahead and push our images over to our local registry so they’ll be ready for Kubernetes to use.
@@ -210,21 +210,21 @@ Note that the last item on the command is the command we want to have running wh
 
 (Hint:  docker ps | grep roar  will let you find the ids more easily)
 
-		Stop the containers
+Stop the containers
 
 >	
 >	docker stop _<container id for roar-web>_
 >	docker stop _<container id for roar-db>_
 >
 	
-	Remove the containers
+Remove the containers
 
 >	
 >	docker rm <container id for roar-web>
 >	docker rm <container id for roar-db>
 >
 	
-	Remove the images
+Remove the images
 
 >	
 >       docker rmi -f roar-web
@@ -243,34 +243,43 @@ Note that the last item on the command is the command we want to have running wh
 <details>
 <summary>Click to expand steps for Lab 4</summary>
 
-1.  First, we need to access the underlying storage area for Docker.  If you are running Docker on a Linux machine, you can open a terminal session to "/var/lib/docker".
+1. First, we need to access the underlying storage area for Docker.  If you are running Docker on a Linux machine, you can open a terminal session to "/var/lib/docker".
 
 If you are on a Windows or Mac system and have Docker Desktop installed, run the following command in a terminal.
 
-$ docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
- 
+>	
+>       docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
+>
+	
 Now you should be able to change to the /var/lib/docker directory and see the files in that structure.
 
-2.  In another terminal session, let's run an interactive container based off of Ubuntu.
+2. In another terminal session, let's run an interactive container based off of Ubuntu.
 
-$ docker run -ti ubuntu:18.04 bash
+>	
+>       docker run -ti ubuntu:18.04 bash
+>
+	
+3. After pulling down an instance of the image, it will be started running for you and you'll be inside the image.  Let's make some simple changes so we can see how these are represented and stored in the underlying file system.  We'll delete one file, create a second one and then exit the container.
 
-3.  After pulling down an instance of the image, it will be started running for you and you'll be inside the image.  Let's make some simple changes so we can see how these are represented and stored in the underlying file system.  We'll delete one file, create a second one and then exit the container.
-
-# rm /etc/environment
-# echo  new > /root/newfile.txt
-# exit
-
+>	
+>       # rm /etc/environment
+>       # echo  new > /root/newfile.txt
+>       # exit
+>
+	
 4. Find the first 4 characters of the ubuntu container you were working with.  You can either get it from the previous steps or you can use a command like the one below to find it.
 
-$ docker ps -a | grep ubuntu
-
+>	
+>       docker ps -a | grep ubuntu
+>
+	
 5. Install the "jq" tool if you don't have it from https://stedolan.github.io/jq/
 
 6. Run a docker inspect command to find the underlying filesystem directories for the layers - using the first 4 characters from the container id and the jq tool to get the "graphdriver" data.
 
-$ docker inspect <first 4 chars of container id> | jq '.[0].GraphDriver.Data'
-
+>	
+>       docker inspect <first 4 chars of container id> | jq '.[0].GraphDriver.Data'
+>
 
 7. You should see output like the following.  Take note of the value for "UpperDir".  Select that and copy it.
 
@@ -284,8 +293,10 @@ $ docker inspect <first 4 chars of container id> | jq '.[0].GraphDriver.Data'
 
 8. In the other terminal window, where you are in the /var/lib/docker directory, do an "ls" of that directory to see what's in the Docker filesystem location.
 
-$ ls <UpperDir path value copied from previous step>
-
+>	
+>       ls <UpperDir path value copied from previous step>
+>
+	
 The results should look something like this - showing the two top directories.
 
 / # ls /var/lib/docker/overlay2/c19f1aa7797551da6701cfe5bb716665189d7191e4bc27ba503e6eb1d3a864cc/diff
@@ -294,8 +305,10 @@ etc   root
 
 9.  Now, take a look at the "etc" directory and you should see the file that was removed. 
 
-$ ls <UpperDir path value copied from previous step>/etc
-
+> 	
+>       ls <UpperDir path value copied from previous step>/etc
+>
+	
 The results should look something like this showing the removed file.
 
 / # ls /var/lib/docker/overlay2/c19f1aa7797551da6701cfe5bb716665189d7191e4bc27ba503e6eb1d3a864cc/diff/etc
@@ -303,8 +316,10 @@ environment
 
 10.  Next, look at the "root" directory and you should see the file that was created. 
 
-$ ls <UpperDir path value copied from previous step>/root
-
+>	
+>       ls <UpperDir path value copied from previous step>/root
+>
+	
 The results should look something like this showing the added file.
 
 / # ls /var/lib/docker/overlay2/c19f1aa7797551da6701cfe5bb716665189d7191e4bc27ba503e6eb1d3a864cc/diff/root
@@ -322,13 +337,18 @@ newfile.txt
 
 12. You can do an "ls" on the path copied from the previous step and you'll see the original starting layer for the container.  You can also look at the "etc" and "root" directories to see the original state of those without the changes we made.
 
-$ ls <path value from 2nd part of LowerDir copied from previous step>
-
-$ ls <path value from 2nd part of LowerDir copied from previous step>/root
-
-$ ls <path value from 2nd part of LowerDir copied from previous step>/etc
-
-
+>	
+>       ls <path value from 2nd part of LowerDir copied from previous step>
+>
+>       ls <path value from 2nd part of LowerDir copied from previous step>/root
+>
+>       ls <path value from 2nd part of LowerDir copied from previous step>/etc
+>
+	
+<p align="center">	
+<b>END OF LAB</b>
+</p>
+</details>
 
 **Lab 5 - Working with Podman**
 
@@ -343,61 +363,86 @@ $ ls <path value from 2nd part of LowerDir copied from previous step>/etc
 
 A. Running in a container
 
-$ docker run -it --device /dev/fuse:rw --privileged -v <working dir>:/build quay.io/podman/stable bash
-
+>	
+>       docker run -it --device /dev/fuse:rw --privileged -v <working dir>:/build quay.io/podman/stable bash
+>
+	
 B. Running with the podman virtual machine. Follow the instructions to download the machine.  Then run it via the two commands below.  
 
-$ podman machine init
-$ podman machine start
-
+>	
+>       podman machine init
+>       podman machine start
+>
+	
 3. Check that podman is installed and responding.
 
-$ podman version
-
+>	
+>       podman version
+>
+	
 4. Now that you have podman installed, clone down the repository for us to work with in building images and then change into the directory with the docker content.
 
-$ git clone https://github.com/skillrepos/ctr-de
-$ cd ctr-de
-
+>	
+>       git clone https://github.com/skillrepos/ctr-de
+>       cd ctr-de
+>
+	
 4. Now, build the two images (the web one and the database one) that we need for our application. Note that the syntax for podman is just like the syntax for Docker. Afterwards, you can see the images with podman.
 
-$ podman build -t roar-web:1.0.0 --build-arg warFile=roar.war -f Dockerfile_roar_web_image .
-
-$ podman build -t roar-db:1.0.0 -f Dockerfile_roar_db_image  .
-
-$ podman images
-
+>	
+>      podman build -t roar-web:1.0.0 --build-arg warFile=roar.war -f Dockerfile_roar_web_image .
+>
+>      podman build -t roar-db:1.0.0 -f Dockerfile_roar_db_image  .
+>
+>      podman images
+>
 
 5. Now let's create a pod. 
 
-$ podman pod create --name roar-pod  -p 8087:8080 --network bridge
-
+>	
+>      podman pod create --name roar-pod  -p 8087:8080 --network bridge
+>
+	
 6. Next, we'll list the pod we have and then inspect it to look at it closer.
 
-$ podman pod ls
-
-$ podman inspect roar-pod
-
+>	
+>      podman pod ls
+>
+>      podman inspect roar-pod
+>
+	
 7.  Notice the inspect lists one container at the bottom.  Let's look closer at what that container is.
 
-$ podman ps -a --pod
-
+>
+>	podman ps -a --pod
+>
+	
 8. Add the web image as a container to the pod.
 
-$ podman run --pod roar-pod  --name roar-web  -d roar-web:1.0.0
-
+>	
+>       podman run --pod roar-pod  --name roar-web  -d roar-web:1.0.0
+>
+	
 9. Finally, we'll add the database image as a container to the pod.
 
-$ podman run --pod roar-pod  -e MYSQL_USER="admin" -e MYSQL_PASSWORD="admin" -e MYSQL_DATABASE="registry" -e MYSQL_ROOT_PASSWORD="root+1"  --name roar-db  -dt roar-db:1.0.0
-
+>
+>	podman run --pod roar-pod  -e MYSQL_USER="admin" -e MYSQL_PASSWORD="admin" -e MYSQL_DATABASE="registry" -e MYSQL_ROOT_PASSWORD="root+1"  --name roar-db  -dt roar-db:1.0.0
+>
+	
 10. You can now see the containers running in the pod.
 
-$ podman inspect roar-pod
-
+>	
+>       podman inspect roar-pod
+>
+	
 11. Now you can open up the url below in a browser and see the application running.
 
 http://localhost:8087/roar
 
+<p align="center">	
+<b>END OF LAB</b>
+</p>
+</details>	
  
 **Lab 6: Working with Buildah**
 
@@ -412,52 +457,72 @@ http://localhost:8087/roar
 
 3. Run the command below to access buildah via a container.
 
-$ docker run -it --device /dev/fuse:rw --privileged -v <working dir>:/build quay.io/buildah/stable bash
-
+>	
+>       docker run -it --device /dev/fuse:rw --privileged -v <working dir>:/build quay.io/buildah/stable bash
+>
+	
 4. If you are running on a linux system, cd to the ctr-de directory.
 
 5. If you're running in a container, you'll now be in the container with access to buildah. Go to the build directory that you mounted into the container. And run the command below to produce new images using the bash script. After the images are created, you should be able to see them via the "buildah images" command.
 
-$ cd /build (if in the container)
-$ cd ctr-de (if in linux)
-
+>
+>	cd /build (if in the container)
+>       cd ctr-de (if in linux)
+>
+	
 6.  Now, run the bash script that will use buildah to build the images instead of the Dockerfiles.  Also, we need to pass in the built deliverable to be pulled in for the webapp. That's what roar.web is.
 
-$ bash ./buildah-roar.sh roar.web
-$ buildah images
-
+>	
+>       bash ./buildah-roar.sh roar.web
+>       buildah images
+>
+	
 7. For this next step, you will need your docker.io userid or your quay.io userid. Login to one of these using the buildah login command and your username/password.
 
-$ buildah login docker.io  -OR-  $ buildah login quay.io
-
+>	
+>       buildah login docker.io  -OR-  $ buildah login quay.io
+>
+	
 8. After logging in to the registry, tag your images with your username appropriately.  
 
-$ buildah tag <roar-web image> for <userid>/roar-web
-$ buildah tag <roar-db image> for <userid>/roar-db
-
+>	
+>      buildah tag <roar-web image> for <userid>/roar-web
+>      buildah tag <roar-db image> for <userid>/roar-db
+>
+	
 9. Push the images out to the registry.
 
-$ buildah push <userid>/roar-web
-$ buildah push <userid>/roar-db
+>	
+>      buildah push <userid>/roar-web
+>      buildah push <userid>/roar-db
+>
+	
 10. Exit out of the container so you're back to being able to access podman.
 
-$ exit
-
+>	
+>      exit
+>
+	
 11. Use podman to pull the updated db image you just pushed.
 
-$ podman pull <userid>/roar-db
-
+>	
+>      podman pull <userid>/roar-db
+>
+	
 12. Now, we'll use podman to remove the old container from the pod and replace it with the new one.
 
-$ podman container rm <container name>
-$ podman container run <new container name> --pod
-
+>	
+>      podman container rm <container name>
+>      podman container run <new container name> --pod
+>
+	
 13. Refresh the application in the browser and you should see a version of the app running with test data.
 
 
 ![image](https://user-images.githubusercontent.com/82771267/229325653-8ec59ca3-f40a-4cdb-b194-a1ceface655f.png)
 
 
-<p align="center">
-**[END OF LAB]**
+<p align="center">	
+<b>END OF LAB</b>
 </p>
+</details>
