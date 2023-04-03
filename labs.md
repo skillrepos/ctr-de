@@ -1,21 +1,21 @@
 <div align="center">
 
-**Containers Demystified**
-<p>A hands-on approach to understanding container mechanics, standards, and tooling.  Includes Docker, Podman, and Buildah</p>
+<h1>Containers Demystified</h1>
+<p><b>A hands-on approach to understanding container mechanics, standards, and tooling.  Includes Docker, Podman, and Buildah</b></p>
 
 **Class Labs**
-Version 2.0 by Brent Laster for Tech Skills Transformations LLC
+<p><i>Version 2.0 by Brent Laster for Tech Skills Transformations LLC</i></p>
 
-04/01/2023
+_04/01/2023_
 </div>
 
 
-**Lab 1 - Creating Images
+**Lab 1 - Creating Images**
 
-**Purpose:  In this lab, we’ll see how to do basic operations like build with images.
+**Purpose:  In this lab, we’ll see how to do basic operations like build with images.**
 
 <details>
-<summary>** Lab 1 - Creating Images - click to expand</summary>
+<summary>"Click to expand steps for Lab 1"</summary>
 
 1. If you haven't already, clone down the ctr-de repository from GitHub.
 
