@@ -1,7 +1,7 @@
 <div align="center">
 
 **Containers Demystified**
-A hands-on approach to understanding container mechanics, standards, and tooling.  Includes Docker, Podman, and Buildah
+<p>A hands-on approach to understanding container mechanics, standards, and tooling.  Includes Docker, Podman, and Buildah</p>
 
 **Class Labs**
 Version 2.0 by Brent Laster for Tech Skills Transformations LLC
