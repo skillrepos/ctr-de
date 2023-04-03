@@ -9,7 +9,7 @@
 _04/01/2023_
 </div>
 
-
+---
 ## Lab 1 - Creating Images
 
 ### Purpose:  In this lab, we’ll see how to do basic operations like build with images.
@@ -72,11 +72,12 @@ _04/01/2023_
 </p>
 </details>
 
+---
+## Lab 2 – Composing images together**
 
-**Lab 2 – Composing images together**
-
-*Purpose: In this lab, we’ll see how to make multiple containers execute together with docker compose and use the docker inspect command to get information to see our running app.*
+# Purpose: In this lab, we’ll see how to make multiple containers execute together with docker compose and use the docker inspect command to get information to see our running app.*
 	
+⬇️	
 <details>
 <summary>Click to expand steps for Lab 2</summary>	
 
@@ -130,11 +131,11 @@ Make a note of the url that is returned.
 </p>
 </details>
 
+---
+## Lab 3 – Debugging Docker Containers**
 
-**Lab 3 – Debugging Docker Containers**
-
-**Purpose: While our app runs fine here, it’s helpful to know about a few commands that we can use to learn more about our containers if there are problems.**  
-
+### Purpose: While our app runs fine here, it’s helpful to know about a few commands that we can use to learn more about our containers if there are problems.**  
+⬇️	
 <details>
 <summary>Click to expand steps for Lab 3</summary>
 	
@@ -235,10 +236,11 @@ Remove the images
 </p>
 </details>
 
-**Lab 4:  Mapping Docker images and containers with the filesystem**
+---	
+## Lab 4:  Mapping Docker images and containers with the filesystem**
 
-**Purpose: In this lab, we'll explore how layers, images and containers are actually mapped and stored in the filesystem.**
-	
+### Purpose: In this lab, we'll explore how layers, images and containers are actually mapped and stored in the filesystem.**
+⬇️	
 <details>
 <summary>Click to expand steps for Lab 4</summary>
 
@@ -349,10 +351,11 @@ newfile.txt
 </p>
 </details>
 
-**Lab 5 - Working with Podman**
+---
+## Lab 5 - Working with Podman**
 
-**Purpose: In this lab, we'll get a chance to work with Podman, an alternative to Docker that also includes the abilities to group and work with containers in "pods".**
-	
+### Purpose: In this lab, we'll get a chance to work with Podman, an alternative to Docker that also includes the abilities to group and work with containers in "pods".**
+⬇️	
 <details>
 <summary>Click to expand steps for Lab 5</summary>
 
@@ -443,10 +446,11 @@ http://localhost:8087/roar
 </p>
 </details>	
  
-**Lab 6: Working with Buildah**
+---
+## Lab 6: Working with Buildah**
 
-**Purpose: In this lab, we'll work with the container build and management tool Buildah.**
-	
+### Purpose: In this lab, we'll work with the container build and management tool Buildah.**
+⬇️	
 <details>
 <summary>Click to expand steps for Lab 6</summary>
 
