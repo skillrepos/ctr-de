@@ -10,11 +10,11 @@ _04/01/2023_
 </div>
 
 
-##Lab 1 - Creating Images
+## Lab 1 - Creating Images
 
-###Purpose:  In this lab, we’ll see how to do basic operations like build with images.
+### Purpose:  In this lab, we’ll see how to do basic operations like build with images.
 
-<details><summary><span style="color:red"><b>Click to expand steps for Lab 1</b></span></summary>
+<details><summary><b>Click to expand steps for Lab 1</b></summary> 📗
 
 1. If you haven't already, clone down the ctr-de repository from GitHub.
 
