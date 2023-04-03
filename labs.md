@@ -136,10 +136,13 @@ Make a note of the url that is returned.
 <b>END OF LAB</b>
 </p>
 </details>
+
 &nbsp;<br>
+	
 ---
 #  
 &nbsp;<br>	
+	
 **Lab 3 – Debugging Docker Containers**
 
 *Purpose: While our app runs fine here, it’s helpful to know about a few commands that we can use to learn more about our containers if there are problems.*  
