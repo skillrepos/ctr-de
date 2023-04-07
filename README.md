@@ -7,9 +7,9 @@ These steps **must** be completed prior to starting the actual labs.
 
 ## Create your own repository for these labs
 
-- Ensure that you have created a repository by forking the [skillrepos/ctr-de](https://github.com/skillrepos/ctr-de) project as a template into your own GitHub area. You do this by clicking the `Fork` button in the upper right portion of the main project page and following the steps to create a copy in [your-github-userid/kint](https://<your-github-userid>/kint).
+- Ensure that you have created a repository by forking the [skillrepos/ctr-de](https://github.com/skillrepos/ctr-de) project as a template into your own GitHub area. You do this by clicking the `Fork` button in the upper right portion of the main project page and following the steps to create a copy in [your-github-userid/ctr-de](https://<your-github-userid>/kint).
 
-![Forking repository](./images/kint1.png?raw=true "Forking the repository")
+![Forking repository](./images/ctr-de-fork.png?raw=true "Forking the repository")
 
 ## Configure your codespace
 
@@ -20,7 +20,7 @@ These steps **must** be completed prior to starting the actual labs.
     - Click `Create codespaces on main` to create the codespace.
     - After the codespace has initialized there will be a terminal present.
 
-![Starting codespace](./images/kint2.png?raw=true "Starting your codespace")
+![Starting codespace](./images/ctr-de-codespace-start.png?raw=true "Starting your codespace")
 
 ## Start your single-node Kubernetes cluster
 2. There is a simple one-node Kubernetes instance called **minikube** available in your codespace. Start it the following way:
