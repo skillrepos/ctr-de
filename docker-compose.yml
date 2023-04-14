@@ -10,5 +10,3 @@ services:
   roar-web:
     image: roar-web
     network_mode: service:roar-db
-    links:
-      - roar-db
