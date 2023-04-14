@@ -1,0 +1,2 @@
+For first lab, on certain linux systems, may need to add docker memory limit on command line 
+For lab on podman, may need to expose port 8087 at time of running podman docker container instead of from app
